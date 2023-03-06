@@ -39,23 +39,6 @@ services:
         aliases:
           - api
 
-  app:
-    build:
-      context: './app'
-    depends_on:
-      - api
-    image: ps-app
-    container_name: app
-    volumes:
-      - app_volume:/app/dist
-    ports:
-      - "${NGINX_PORT}:80"
-    networks:
-      ps_network:
-        aliases:
-          - app
-
 volumes:
   api_volume:
   bdd_volume:
-  app_volume:
