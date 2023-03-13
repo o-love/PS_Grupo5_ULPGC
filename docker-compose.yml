@@ -19,7 +19,7 @@ services:
       context: './api'
     depends_on: 
       - mysql
-    image: ps-Server
+    image: ps-server
     container_name: Server
     restart: always
     ports:
@@ -31,8 +31,8 @@ services:
     build:
       context: './Client'
     depends_on:
-      - api
-    image: ps-Client
+      - Server
+    image: ps-client
     container_name: Client
     volumes:
       - app_volume:/app/dist

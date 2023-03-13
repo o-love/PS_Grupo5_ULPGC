@@ -8,7 +8,7 @@ RUN npm run build --prod
 
 # production stage
 FROM nginx:1.23-alpine
-COPY --from=build /app/dist/app/ /usr/share/nginx/html
+COPY --from=build /app/dist/client/ /usr/share/nginx/html
 # COPY --from=build /app/nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
